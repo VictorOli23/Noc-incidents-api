@@ -1,0 +1,53 @@
+# 🛠️ NOC Incident Management API
+
+Este projeto consiste em uma **API RESTful** robusta, desenvolvida para a gestão e monitoramento de incidentes em um Centro de Operações de Rede (NOC). O sistema foi projetado para simular cenários reais de infraestrutura de telecomunicações, permitindo o controle de ativos e a priorização de falhas críticas.
+
+## 🚀 Demonstração
+A documentação interativa da API (Swagger UI) pode ser acessada em:
+👉 **[COLE_AQUI_O_LINK_DO_RENDER]/docs**
+
+---
+
+## 💻 Tecnologias Utilizadas
+
+*   **Linguagem:** Python 3.12+
+*   **Framework:** FastAPI
+*   **Banco de Dados:** PostgreSQL 
+*   **ORM:** SQLAlchemy
+*   **Hospedagem:** Render (Cloud Hosting)
+*   **Database-as-a-Service:** Neon Tech (PostgreSQL Serverless)
+
+## 🏗️ Arquitetura e Fluxo de Dados
+
+O sistema opera em uma arquitetura distribuída, garantindo que a aplicação e o banco de dados residam em ambientes isolados e seguros:
+
+1.  **Client:** Requisições via Swagger UI ou ferramentas como Postman/Insomnia.
+2.  **API (Render):** Processa a lógica de negócio e validações.
+3.  **Database (Neon Tech):** Persistência de dados em um cluster PostgreSQL.
+
+
+
+## 📋 Funcionalidades Principais
+
+*   **Gestão de Equipamentos:** Cadastro e listagem de ativos de rede (Roteadores, Switches, OLTs) com mapeamento de Hostname e IP.
+*   **Gestão de Incidentes:** Abertura de tickets com níveis de severidade (Crítica, Alta, Média, Baixa) e associação direta ao hardware afetado.
+*   **Suporte B2B:** Identificação de clientes afetados para facilitar a gestão de SLAs.
+
+## 🔧 Como Testar o Projeto
+
+Para simular o fluxo de trabalho de um NOC, siga estes passos na interface `/docs`:
+
+1.  **Cadastrar Hardware:** Utilize a rota `POST /equipamentos/` para adicionar um dispositivo (ex: Hostname: `RT-CORE-01`, IP: `10.0.0.1`).
+2.  **Obter ID:** Veja o ID gerado pelo banco de dados na resposta da criação.
+3.  **Abrir Chamado:** Utilize a rota `POST /incidentes/` informando o `equipamento_id` capturado.
+4.  **Listar Atividades:** Consulte `GET /incidentes/` para visualizar todos os problemas registrados no banco em tempo real.
+
+---
+
+## 👤 Autor
+
+**Victor Henrique de Oliveira**
+Atuação profissional em operações de rede (NOC) e automação com Python.
+
+---
+*Este projeto foi desenvolvido para fins de portfólio, demonstrando habilidades em desenvolvimento backend, modelagem de banco de dados e deploy em nuvem.*
